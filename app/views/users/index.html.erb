@@ -1,8 +1,20 @@
-<h1>Welcome to Sample app using Redis.</h1>
-
-<form action="users/show">
-	Name:     <input type="text"><br><br><br>
-	Email ID: <input type="text"><br><br><br>
-	<input type="submit" name="Submit">
-</form>
-
+<html>
+<head>
+	<title> Index</title>
+</head>
+<body>
+	<h1>Welcome to Sample app using Redis.</h1>
+	<table>
+		<tr>
+			<td>Username: </td>
+			<td>Email: </td>
+		</tr>
+		<%= @users.each do |user| %>
+		<tr>
+			<td><%= user.name %></td>
+			<td><%= user.email %></td>
+		</tr>
+		<% end %>
+	</table>
+</body>
+</html>

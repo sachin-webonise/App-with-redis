@@ -2,18 +2,20 @@ class UsersController < ApplicationController
 	def new
 	end
 
-	def index
-
+	def signup
 	end
 
-	def create
-		@users = User.create(:name => "Sachin Tendulkar", :email => "sachin.ten@gmail.com")
-		@users.save
+	def index
+		@users = User.all
+	end
+
+	def create				
+		@user = User.create(:name => params[:user][:name], :email => params[:user][:email])	
+		redirect_to user_path(params[:user][:name])
+		# "/users/#{params[:user][:name]}"
 	end
 
 	def show
-		@users = User.find(:name => "Sachin Tendulkar")
-	end
-
-	
+		@user = User.find(name: params["id"]).first
+	end	
 end
