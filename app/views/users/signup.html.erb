@@ -2,11 +2,6 @@
 
 <h1>Sign Up to Sample Redis App</h1>
 
-<!-- <form action="/users" method="post">
-	Name:     <input type="text"><br><br><br>
-	Email ID: <input type="text"><br><br><br>
-	<input type="submit" value="Submit">
-</form> -->
 <%= form_tag '/users', :method => :post do %>
 	<%= label_tag "name", 'Name' %>
 	<%= text_field_tag "user[name]" %><br /><br />

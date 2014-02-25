@@ -1,0 +1,12 @@
+<html>
+
+<h1>Edit</h1>
+<%= form_tag "/users/#{@user.name}", :method => :put do %>
+	
+	<%= label_tag "email", 'Email' %>
+	<%= text_field_tag "user[email]" %><br /><br />
+	<%= submit_tag 'Submit'%>
+<% end %>
+<%= link_to 'Back', root_path %>
+
+</html>
