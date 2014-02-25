@@ -33,4 +33,9 @@ class UsersController < ApplicationController
 			render 'edit'
 		end
 	end
+
+	def destroy
+		(User.find(name: params["id"]).first).delete
+		redirect_to root_path
+	end
 end
