@@ -1,6 +1,7 @@
 RedisUserApp::Application.routes.draw do
   resources :users
-  root 'users#signup'
+  root 'users#index'
+  match 'signup', to: 'users#signup', via: 'get'
   #get 'users/index'
   #get 'users/show'
   # The priority is based upon order of creation: first created -> highest priority.
